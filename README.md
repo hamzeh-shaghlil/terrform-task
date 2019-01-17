@@ -1,16 +1,34 @@
-# Foobar
+# Exersices 2
+This project uses Terrraform script to providion resources:
 
-Foobar is a Python library for dealing with word pluralization.
+• An EC2 instance of type t2.micro based on a Debian Stretch Image.
+• A Loadbalancer forwarding incoming requests to the EC2 instance.
 
-## Installation
+The EC2 instance runs an Nginx webserver serving one HTML file (index.html cloned from a Github repo). The Nginx is a Docker container started on the EC2 instance (DockerFile cloned from a GitHub repo).
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+## main.tf
 
-```bash
-pip install foobar
-```
+This Terraform script is used to provision AWS infrastructure based on the region variable.
 
-## Usage
+Inputs:
+
+## userdata.sh
+
+This shell script is used to bootstrap the EC2 instance, including the following steps:
+
+Install packages to allow apt to use a repository over HTTPS:
+Add Docker’s official GPG key:
+Add Docker repository to the system
+Update the apt package index.
+Install the latest version of Docker CE 
+Clone repository data from My Github account into the server (DockerFile and index.html)
+Sudo git clone htps://github.com/hamzehsh/terrform-task.git /home/admin/repo
+Build docker-image using  the docker-file that we cloned from the GitHub repository
+Run Docker container  using webserver-image:v1 image on port 80
+
+
+## main.tf
+
 
 ```python
 import foobar
