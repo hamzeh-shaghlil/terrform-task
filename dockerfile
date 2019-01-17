@@ -1,2 +1,2 @@
 FROM nginx:alpine
-COPY . /usr/share/nginx/html
+COPY /home/admi/terrform-task/index.html /usr/share/nginx/html
