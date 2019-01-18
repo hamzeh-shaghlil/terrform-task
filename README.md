@@ -11,7 +11,7 @@
 This Terraform script is used to provision AWS infrastructure based on the region variable 
 
 
-###  Configure the AWS Provider (AWS credentials) as vaiables from variables.tf 
+####  Configure the AWS Provider (AWS credentials) as vaiables from variables.tf 
 
 ```
 provider "aws" {
@@ -22,11 +22,11 @@ provider "aws" {
 
 ```
 
-###  Declare the data source (query to get the AZ in the region)
+####  Declare the data source (query to get the AZ in the region)
 ```
 data "aws_availability_zones" "available" {}
 ```
-### Query the AWS API for the latest Depian AMI version
+#### Query the AWS API for the latest Depian AMI version
 ```
 data "aws_ami" "latest-debian" {
 most_recent = true
@@ -44,7 +44,7 @@ owners = ["379101102735"] # Canonical
 }
 ```
 
-### Create a Security Group for EC2 (webserver).
+#### Create a Security Group for EC2 (webserver).
 
 ```
     resource "aws_security_group" "debian-SG" {
@@ -78,7 +78,7 @@ owners = ["379101102735"] # Canonical
 
 
 
-### Create a Security Group for ELB (Loadblancer).
+#### Create a Security Group for ELB (Loadblancer).
 ```
 resource "aws_security_group" "ELB-SG" {
   name        = "ELB-SG"
@@ -109,7 +109,7 @@ resource "aws_security_group" "ELB-SG" {
 
 ```
 
-### Create EC2 (Webserver) Debian using the latest AMI image query with The userdata path to run shell scipt once once launching  The EC2 and attach the security group that we have created in the previous resource.
+#### Create EC2 (Webserver) Debian using the latest AMI image query with The userdata path to run shell scipt once once launching  The EC2 and attach the security group that we have created in the previous resource.
 ```
 resource "aws_instance" "my_first_instance" {
     ami           = "${data.aws_ami.latest-debian.id}"
@@ -125,7 +125,7 @@ resource "aws_instance" "my_first_instance" {
     
     
     
-### Create Classic LoadBlancer and attach the EC2 Instance (webserver)
+#### Create Classic LoadBlancer and attach the EC2 Instance (webserver)
   ```  
     
     resource "aws_elb" "MyELB" {
@@ -172,7 +172,7 @@ instances                   = ["${aws_instance.my_first_instance.id}"]
     
     
     
-    
+####  Declare ouput to show us the DNS ENDPoint address of the Loadbnalncer that we create so we can request the html page through it.
     
 output "LoadBalancer DNS" {
   value = "${aws_elb.MyELB.dns_name}"
