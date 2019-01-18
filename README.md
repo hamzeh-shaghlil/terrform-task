@@ -1,5 +1,5 @@
 # Exersices 2
-This project uses Terrraform script to providion resources:
+**This project uses Terrraform script to providion resources:**
 
 • An EC2 instance of type t2.micro based on a Debian Stretch Image.
 • A Loadbalancer forwarding incoming requests to the EC2 instance.
