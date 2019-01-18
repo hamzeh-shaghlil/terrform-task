@@ -1,10 +1,10 @@
 # Exersices 2
 **This project uses Terrraform script to provision the below resources:**
 
-• An EC2 instance of type t2.micro based on a Debian Stretch Image.
-• A Loadbalancer forwarding incoming requests to the EC2 instance.
-
-The EC2 instance runs an Nginx webserver serving one HTML file (index.html cloned from a Github repo). The Nginx is a Docker container started on the EC2 instance (DockerFile cloned from a GitHub repo).
+- An EC2 instance of type t2.micro based on a Debian Stretch Image.
+- A Loadbalancer forwarding incoming requests to the EC2 instance.
+- The EC2 instance runs an Nginx webserver serving one HTML file (index.html cloned from a Github repo). 
+- The Nginx is a Docker container started on the EC2 instance (DockerFile cloned from a GitHub repo).
 
 ## main.tf
 
