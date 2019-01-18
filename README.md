@@ -206,7 +206,7 @@ instances                   = ["${aws_instance.my_first_instance.id}"]
     
     
 >   Declare output to show us the DNS ENDPoint address of the Loadbnalncer that we create so we can request the html page through it.
-   ```json   
+   ```   
 output "LoadBalancer DNS" {
   value = "${aws_elb.MyELB.dns_name}"
 }
