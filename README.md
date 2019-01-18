@@ -46,7 +46,7 @@ variable "region" {}
 
 >   Configure the AWS Provider (AWS credentials) as vaiables from variables.tf 
 
-```json
+```
 provider "aws" {
   access_key = "${var.access_key}"
   secret_key = "${var.secret_key}"
@@ -60,7 +60,7 @@ provider "aws" {
 data "aws_availability_zones" "available" {}
 ```
 >  Query the AWS API for the latest Depian AMI version
-```json
+```
 data "aws_ami" "latest-debian" {
 most_recent = true
 owners = ["379101102735"] # Canonical
