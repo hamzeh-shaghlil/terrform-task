@@ -29,7 +29,7 @@ Inputs:
 
 ## main.tf
 
-###  Configure the AWS Provider (AWS credentials)
+###  Configure the AWS Provider (AWS credentials) as vaiables from variables.tf 
 
 ```
 provider "aws" {
@@ -39,9 +39,10 @@ provider "aws" {
 }
 
 ```
-
+```
+###  Declare the data source (query to get the AZ in the region)
 data "aws_availability_zones" "available" {}
-
+```
 data "aws_ami" "latest-debian" {
 most_recent = true
 owners = ["379101102735"] # Canonical
