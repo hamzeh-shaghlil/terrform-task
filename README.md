@@ -180,15 +180,15 @@ output "LoadBalancer DNS" {
   value = "${aws_elb.MyELB.dns_name}"
 }
     
-```    
+  
     
     
     
     
-    ## userdata.sh
+## userdata.sh
 
 **This shell script is used to bootstrap the EC2 instance, including the following steps:**
-
+--
 1. Update the apt package index.
 2. Install packages to allow apt to use a repository over HTTPS:
 3. Add Docker’s official GPG key:
@@ -199,10 +199,10 @@ output "LoadBalancer DNS" {
 8. Build docker-image using  the docker-file that we cloned from the GitHub repository
 9. Run Docker container  using webserver-image:v1 image on port 80
 
+ --   
     
     
     
-    
 
 
 
@@ -219,19 +219,3 @@ output "LoadBalancer DNS" {
 
 
 
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
