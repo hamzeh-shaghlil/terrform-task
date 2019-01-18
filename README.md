@@ -44,7 +44,7 @@ variable "region" {}
 ### This Terraform script is used to provision AWS infrastructure based on the region variable 
 
 
->   Configure the AWS Provider (AWS credentials) as vaiables from variables.tf 
+>   Configure the AWS Provider (AWS credentials) as variables. 
 
 ```
 provider "aws" {
