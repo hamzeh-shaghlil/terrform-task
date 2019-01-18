@@ -250,8 +250,12 @@ sudo docker run -d -p 80:80 webserver-image:v1
 
 
 
-
-
+## variables.tf
+``` 
+variable "access_key" {}
+variable "secret_key" {}
+variable "region" {}
+``` 
 
 
 
