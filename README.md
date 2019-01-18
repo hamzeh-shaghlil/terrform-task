@@ -44,6 +44,8 @@ provider "aws" {
 ```
 data "aws_availability_zones" "available" {}
 ```
+### query the AWS API for the latest Depian AMI version
+```
 data "aws_ami" "latest-debian" {
 most_recent = true
 owners = ["379101102735"] # Canonical
@@ -58,7 +60,7 @@ owners = ["379101102735"] # Canonical
       values = ["hvm"]
   }
 }
-
+```
 
 
     resource "aws_security_group" "debian-SG" {
