@@ -16,7 +16,7 @@ Inputs:
 
 **This shell script is used to bootstrap the EC2 instance, including the following steps:**
 
-1.Install packages to allow apt to use a repository over HTTPS:
+1. Install packages to allow apt to use a repository over HTTPS:
 2.Add Docker’s official GPG key:
 3.Add Docker repository to the system
 4.Update the apt package index.
