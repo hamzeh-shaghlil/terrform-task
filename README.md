@@ -6,6 +6,13 @@
 - The EC2 instance runs an Nginx webserver serving one HTML file (index.html cloned from a Github repo). 
 - The Nginx is a Docker container started on the EC2 instance (DockerFile cloned from a GitHub repo).
 
+
+
+
+
+
+
+
 ## main.tf
 
 This Terraform script is used to provision AWS infrastructure based on the region variable 
