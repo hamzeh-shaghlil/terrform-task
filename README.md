@@ -18,13 +18,13 @@ Inputs:
 
 1. Install packages to allow apt to use a repository over HTTPS:
 2. Add Docker’s official GPG key:
-3.Add Docker repository to the system
-4.Update the apt package index.
-5.Install the latest version of Docker CE 
-Clone repository data from My Github account into the server (DockerFile and index.html)
-Sudo git clone htps://github.com/hamzehsh/terrform-task.git /home/admin/repo
-Build docker-image using  the docker-file that we cloned from the GitHub repository
-Run Docker container  using webserver-image:v1 image on port 80
+3. Add Docker repository to the system
+4. Update the apt package index.
+5. Install the latest version of Docker CE 
+6. Clone repository data from My Github account into the server (DockerFile and index.html)
+7. Sudo git clone htps://github.com/hamzehsh/terrform-task.git /home/admin/repo
+8. Build docker-image using  the docker-file that we cloned from the GitHub repository
+9. Run Docker container  using webserver-image:v1 image on port 80
 
 
 ## main.tf
