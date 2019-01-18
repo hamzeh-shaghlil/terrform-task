@@ -14,7 +14,7 @@ Inputs:
 
 ## userdata.sh
 
-This shell script is used to bootstrap the EC2 instance, including the following steps:
+**This shell script is used to bootstrap the EC2 instance, including the following steps:**
 
 Install packages to allow apt to use a repository over HTTPS:
 Add Docker’s official GPG key:
