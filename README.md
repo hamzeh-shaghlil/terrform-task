@@ -11,14 +11,17 @@
 
 ### Prerequisites
 
-1. Terrafrom latest version proper with your operating system and architecture.
-2. AWS Account with proper AWS Credentials 
+-- Terraform latest version proper with your operating system and architecture.
+-- AWS Account with proper AWS Credentials 
 
 
 
 ### Installing
 
-Clone or Download this repo to your local machine using 
+1. Clone or Download this repo to your local machine using "https://github.com/hamzehsh/terrform-task.git"
+2. Run from your terminal ```terraform init ``` which will initializes various local settings and data that will be used by subsequent commands.
+3. 
+
 
 
 
@@ -27,7 +30,7 @@ Clone or Download this repo to your local machine using
 
 ## main.tf
 
-This Terraform script is used to provision AWS infrastructure based on the region variable 
+> This Terraform script is used to provision AWS infrastructure based on the region variable 
 
 
 ####  Configure the AWS Provider (AWS credentials) as vaiables from variables.tf 
