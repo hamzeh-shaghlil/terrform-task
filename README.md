@@ -28,7 +28,7 @@
 
 ## variables.tf
 > Defines AWS Credentials Variables
-```json 
+```
 variable "access_key" {}
 variable "secret_key" {}
 variable "region" {}
@@ -56,7 +56,7 @@ provider "aws" {
 ```
 
 >   Declare the data source (query to get the AZ in the region)
-```json
+```
 data "aws_availability_zones" "available" {}
 ```
 >  Query the AWS API for the latest Depian AMI version
@@ -112,7 +112,7 @@ owners = ["379101102735"] # Canonical
 
 
 >  Create a Security Group for ELB (Loadblancer).
-```json
+```
 resource "aws_security_group" "ELB-SG" {
   name        = "ELB-SG"
   description = "LoadBlancer-SG"
@@ -143,7 +143,7 @@ resource "aws_security_group" "ELB-SG" {
 ```
 
 >  Create EC2 (Webserver) Debian using the latest AMI image query with The userdata path to run shell scipt once once launching  The EC2 and attach the security group that we have created in the previous resource.
-```json
+```
 resource "aws_instance" "my_first_instance" {
     ami           = "${data.aws_ami.latest-debian.id}"
     instance_type = "t2.micro"
@@ -159,7 +159,7 @@ resource "aws_instance" "my_first_instance" {
     
     
 >  Create Classic LoadBlancer and attach the EC2 Instance (webserver)
-  ```json  
+  ```  
     
     resource "aws_elb" "MyELB" {
   name               = "My-ELB"
@@ -230,6 +230,7 @@ output "LoadBalancer DNS" {
 8. Build docker-image using  the docker-file that we cloned from the GitHub repository
 9. Run Docker container  using webserver-image:v1 image on port 80
   ```  
+  
   ```bash
     #!/bin/bash
 #Update the apt package index.
