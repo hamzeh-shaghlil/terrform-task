@@ -109,20 +109,8 @@ resource "aws_security_group" "ELB-SG" {
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Create EC2 (Webserver) Debian using the latest AMI query with The userdata path to run shell scipt once once launching  The EC2 and attach the security group that we have created in the previous resource.
+```
 resource "aws_instance" "my_first_instance" {
     ami           = "${data.aws_ami.latest-debian.id}"
     instance_type = "t2.micro"
@@ -133,7 +121,7 @@ resource "aws_instance" "my_first_instance" {
     }
     
     }
-    
+  ```  
     
     
     
