@@ -39,8 +39,9 @@ provider "aws" {
 }
 
 ```
-```
+
 ###  Declare the data source (query to get the AZ in the region)
+```
 data "aws_availability_zones" "available" {}
 ```
 data "aws_ami" "latest-debian" {
