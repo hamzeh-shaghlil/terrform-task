@@ -142,7 +142,7 @@ resource "aws_security_group" "ELB-SG" {
 
 ```
 
->  Create EC2 (Webserver) Debian using the latest AMI image query with The userdata path to run shell scipt once once launching  The EC2 and attach the security group that we have created in the previous resource.
+>  Create EC2 (Webserver) Debian using the latest AMI image query with bash scribt run using the userdata file to run shel once launching The EC2 and attach the security group that was created in the previous resource.
 ```
 resource "aws_instance" "my_first_instance" {
     ami           = "${data.aws_ami.latest-debian.id}"
@@ -262,7 +262,7 @@ sudo docker run -d -p 80:80 webserver-image:v1
 
 
 
-## Authors
+## Author
 * **Hamzeh Shaghlil** - [Linkedin](https://www.linkedin.com/in/hamzeh-shaghlil
 )
 
