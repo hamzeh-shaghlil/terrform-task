@@ -11,8 +11,19 @@
 
 ### Prerequisites
 
-1. Terrafrom
-2. AWS Account with appropriate AWS Credentials 
+1. Terrafrom latest version proper with your operating system and architecture.
+2. AWS Account with proper AWS Credentials 
+
+
+
+### Installing
+
+Clone or Download this repo to your local machine using 
+
+
+
+
+
 
 ## main.tf
 
