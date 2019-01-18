@@ -230,7 +230,7 @@ output "LoadBalancer DNS" {
 8. Build docker-image using  the docker-file that we cloned from the GitHub repository
 9. Run Docker container  using webserver-image:v1 image on port 80
   ```  
-  ``` 
+  ```bash
     #!/bin/bash
 #Update the apt package index.
 sudo apt update -y
