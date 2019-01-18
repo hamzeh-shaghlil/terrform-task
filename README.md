@@ -1,4 +1,4 @@
-# Exersices 2
+# Exercise 2
 **This project uses Terrraform script to provision the below resources:**
 
 - An EC2 instance of type t2.micro based on a Debian Stretch Image.
