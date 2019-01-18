@@ -11,8 +11,8 @@
 
 ### Prerequisites
 
--- Terraform latest version proper with your operating system and architecture.
--- AWS Account with proper AWS Credentials 
+- Terraform latest version proper with your operating system and architecture.
+- AWS Account with proper AWS Credentials 
 
 
 
