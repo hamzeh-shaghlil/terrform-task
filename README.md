@@ -12,7 +12,7 @@
 ### Prerequisites
 
 - Terraform latest version proper with your operating system and architecture.
-- AWS Account with proper AWS Credentials 
+- :cloud: AWS Account with proper AWS Credentials 
 
 
 
@@ -23,7 +23,7 @@
 3. Run ```terraform apply ``` command to Builds the infrastructure
 4. you will be ask to Enter your AWS Credentials and The Region that you want to work in it.
 5. approve for terraform to perform the described actions
-6. once the creating process finish you will have The Loadblancer endpoint as output which you can use it to access the html page.
+6. once the creating process finish you will have The Loadblancer endpoint as output which you can use it to access the html page. :raised_hands:
 
 
 ## variables.tf
