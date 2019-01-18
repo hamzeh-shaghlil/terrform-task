@@ -19,8 +19,12 @@
 ### Installing
 
 1. Clone or Download this repo to your local machine using "https://github.com/hamzehsh/terrform-task.git"
-2. Run from your terminal ```terraform init ``` which will initializes various local settings and data that will be used by subsequent commands.
-3. 
+2. Run from your terminal ```terraform init ``` command to Initialize a Terraform working directory inside .
+3. Run ```terraform apply ``` command to Builds the infrastructure
+4. you will be ask to Enter your AWS Credentials and The Region that you want to work in it.
+5. approve for terraform to perform the described actions
+6. once the creating process finish you will have > The Loadblancer endpoint as output which you can use it to access the html page.
+
 
 
 
