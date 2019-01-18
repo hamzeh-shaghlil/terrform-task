@@ -3,7 +3,7 @@
 
 - An EC2 instance of type t2.micro based on a Debian Stretch Image.
 - A Loadbalancer forwarding incoming requests to the EC2 instance.
-- The EC2 instance runs an Nginx webserver serving one HTML file (index.html cloned from a Github repo). 
+- The EC2 instance runs a Nginx webserver serving one HTML file (index.html cloned from a Github repo). 
 - The Nginx is a Docker container started on the EC2 instance (DockerFile cloned from a GitHub repo).
 
 
@@ -11,8 +11,8 @@
 
 ### Prerequisites
 
-- Terraform latest version proper with your operating system and architecture.
-- :cloud: AWS Account with proper AWS Credentials 
+-  The latest version of Terraform.
+- :cloud: AWS Account with proper AWS Credentials.
 
 
 
@@ -21,9 +21,9 @@
 1. Clone or Download this repo to your local machine using "https://github.com/hamzehsh/terrform-task.git"
 2. Run from your terminal ```terraform init ``` command to Initialize a Terraform working directory inside .
 3. Run ```terraform apply ``` command to Builds the infrastructure
-4. you will be ask to Enter your AWS Credentials and The Region that you want to work in it.
-5. approve for terraform to perform the described actions
-6. once the creating process finish you will have The Loadblancer endpoint as output which you can use it to access the html page. :raised_hands:
+4. You will be asked to Enter your AWS Credentials and The Region that you want to work in it.
+5. Approve for terraform to perform the described actions
+6. Once the creating process finishes you will have The Loadblancer endpoint as output which you can use it to access the HTML page. :raised_hands:
 
 
 ## variables.tf
@@ -142,7 +142,7 @@ resource "aws_security_group" "ELB-SG" {
 
 ```
 
->  Create EC2 (Webserver) Debian using the latest AMI image query with bash scribt run using the userdata file to run shel once launching The EC2 and attach the security group that was created in the previous resource.
+>  Create EC2 (Webserver) Debian using the latest AMI image query with bash script run using the userdata file to run shel once launching The EC2 and attach the security group that was created in the previous resource.
 ```
 resource "aws_instance" "my_first_instance" {
     ami           = "${data.aws_ami.latest-debian.id}"
@@ -205,7 +205,7 @@ instances                   = ["${aws_instance.my_first_instance.id}"]
     
     
     
->   Declare output to show us the DNS ENDPoint address of the Loadbnalncer that we create so we can request the html page through it.
+>   Declare output to retrive the Loadbnalncer ENDPoint that to request the HTML page through it.
    ```   
 output "LoadBalancer DNS" {
   value = "${aws_elb.MyELB.dns_name}"
@@ -218,12 +218,12 @@ output "LoadBalancer DNS" {
     
 ## userdata.sh
 
-> This Userdata file include the shell script that used to bootstrap the EC2 instance, including the following steps:**
+> This User data file includes the shell script that used to bootstrap the EC2 instance, including the following steps:**
   ```  
 1. Update the apt package index.
 2. Install packages to allow apt to use a repository over HTTPS:
 3. Add Docker’s official GPG key:
-4. Add Docker repository to the system
+4. Add the Docker repository to the system
 5. Update the apt package index.
 6. Install the latest version of Docker CE 
 7. Clone repository data from My Github account into the server (DockerFile and index.html)
@@ -256,9 +256,9 @@ sudo docker run -d -p 80:80 webserver-image:v1
 ``` 
 
 
-## dokcerfile
+## dockerfile
 
-> simple dockerfile download the latest version of nginx-alpine and copy the html file to the default path of nginx 
+> simple dockerfile download the latest nginx-alpine version and copy the HTML file to the default path of nginx 
 
 
 
