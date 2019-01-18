@@ -9,9 +9,10 @@
 
 
 
+### Prerequisites
 
-
-
+1. Terrafrom
+2. AWS Account with appropriate AWS Credentials 
 
 ## main.tf
 
