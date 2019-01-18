@@ -26,6 +26,13 @@
 6. once the creating process finish you will have The Loadblancer endpoint as output which you can use it to access the html page.
 
 
+## variables.tf
+> Defines AWS Credentials Variables
+``` 
+variable "access_key" {}
+variable "secret_key" {}
+variable "region" {}
+``` 
 
 
 
@@ -245,17 +252,6 @@ sudo docker build -t webserver-image:v1 /home/admin/repo/
 sudo docker run -d -p 80:80 webserver-image:v1
     
     
-``` 
-
-
-
-
-## variables.tf
-> Defines AWS Credentials Variables
-``` 
-variable "access_key" {}
-variable "secret_key" {}
-variable "region" {}
 ``` 
 
 
