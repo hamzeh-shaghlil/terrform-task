@@ -26,7 +26,7 @@ provider "aws" {
 ```
 data "aws_availability_zones" "available" {}
 ```
-### query the AWS API for the latest Depian AMI version
+### Query the AWS API for the latest Depian AMI version
 ```
 data "aws_ami" "latest-debian" {
 most_recent = true
@@ -109,7 +109,7 @@ resource "aws_security_group" "ELB-SG" {
 
 ```
 
-### Create EC2 (Webserver) Debian using the latest AMI query with The userdata path to run shell scipt once once launching  The EC2 and attach the security group that we have created in the previous resource.
+### Create EC2 (Webserver) Debian using the latest AMI image query with The userdata path to run shell scipt once once launching  The EC2 and attach the security group that we have created in the previous resource.
 ```
 resource "aws_instance" "my_first_instance" {
     ami           = "${data.aws_ami.latest-debian.id}"
@@ -125,10 +125,8 @@ resource "aws_instance" "my_first_instance" {
     
     
     
-
-    
-    
-    
+### Create Classic LoadBlancer and attach the EC2 Instance (webserver)
+  ```  
     
     resource "aws_elb" "MyELB" {
   name               = "My-ELB"
@@ -170,7 +168,7 @@ instances                   = ["${aws_instance.my_first_instance.id}"]
   }
 }
     
-    
+  ```      
     
     
     
@@ -188,7 +186,7 @@ output "LoadBalancer DNS" {
 ## userdata.sh
 
 **This shell script is used to bootstrap the EC2 instance, including the following steps:**
---
+  ```  
 1. Update the apt package index.
 2. Install packages to allow apt to use a repository over HTTPS:
 3. Add Docker’s official GPG key:
@@ -198,8 +196,7 @@ output "LoadBalancer DNS" {
 7. Clone repository data from My Github account into the server (DockerFile and index.html)
 8. Build docker-image using  the docker-file that we cloned from the GitHub repository
 9. Run Docker container  using webserver-image:v1 image on port 80
-
- --   
+  ```  
     
     
     
