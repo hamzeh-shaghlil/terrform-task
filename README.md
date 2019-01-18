@@ -28,7 +28,7 @@
 
 ## variables.tf
 > Defines AWS Credentials Variables
-``` 
+```json 
 variable "access_key" {}
 variable "secret_key" {}
 variable "region" {}
@@ -56,11 +56,11 @@ provider "aws" {
 ```
 
 >   Declare the data source (query to get the AZ in the region)
-```
+```json
 data "aws_availability_zones" "available" {}
 ```
 >  Query the AWS API for the latest Depian AMI version
-```
+```json
 data "aws_ami" "latest-debian" {
 most_recent = true
 owners = ["379101102735"] # Canonical
@@ -112,7 +112,7 @@ owners = ["379101102735"] # Canonical
 
 
 >  Create a Security Group for ELB (Loadblancer).
-```
+```json
 resource "aws_security_group" "ELB-SG" {
   name        = "ELB-SG"
   description = "LoadBlancer-SG"
@@ -143,7 +143,7 @@ resource "aws_security_group" "ELB-SG" {
 ```
 
 >  Create EC2 (Webserver) Debian using the latest AMI image query with The userdata path to run shell scipt once once launching  The EC2 and attach the security group that we have created in the previous resource.
-```
+```json
 resource "aws_instance" "my_first_instance" {
     ami           = "${data.aws_ami.latest-debian.id}"
     instance_type = "t2.micro"
@@ -159,7 +159,7 @@ resource "aws_instance" "my_first_instance" {
     
     
 >  Create Classic LoadBlancer and attach the EC2 Instance (webserver)
-  ```  
+  ```json  
     
     resource "aws_elb" "MyELB" {
   name               = "My-ELB"
@@ -206,11 +206,11 @@ instances                   = ["${aws_instance.my_first_instance.id}"]
     
     
 >   Declare output to show us the DNS ENDPoint address of the Loadbnalncer that we create so we can request the html page through it.
-    
+   ```json   
 output "LoadBalancer DNS" {
   value = "${aws_elb.MyELB.dns_name}"
 }
-    
+  ```    
   
     
     
