@@ -44,7 +44,9 @@ owners = ["379101102735"] # Canonical
 }
 ```
 
+### Create a Security Group for EC2 (webserver).
 
+```
     resource "aws_security_group" "debian-SG" {
   name        = "debian-SG"
   description = "webserver-SG"
@@ -64,10 +66,6 @@ owners = ["379101102735"] # Canonical
     cidr_blocks     = ["0.0.0.0/0"]
   }
   
-  
-  
-  
-  
 
   tags = {
     Name = "debian-SG"
@@ -75,9 +73,13 @@ owners = ["379101102735"] # Canonical
 }
 
 
+```
 
 
 
+
+### Create a Security Group for ELB (Loadblancer).
+```
 resource "aws_security_group" "ELB-SG" {
   name        = "ELB-SG"
   description = "LoadBlancer-SG"
@@ -105,7 +107,7 @@ resource "aws_security_group" "ELB-SG" {
   }
 }
 
-
+```
 
 
 
