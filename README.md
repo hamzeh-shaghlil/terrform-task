@@ -29,7 +29,7 @@ Inputs:
 
 ## main.tf
 
-
+### AWS credintails
 ```
 provider "aws" {
   access_key = "${var.access_key}"
@@ -37,7 +37,7 @@ provider "aws" {
   region     = "${var.region}"
 }
 
-
+```
 
 data "aws_availability_zones" "available" {}
 
