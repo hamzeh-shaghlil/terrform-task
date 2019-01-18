@@ -261,7 +261,7 @@ variable "region" {}
 
 
 ## Authors
-* **Hamzeh Shaghlil** - *Initial work* - [PurpleBooth](https://www.linkedin.com/in/hamzeh-shaghlil
+* **Hamzeh Shaghlil** - [Linkedin](https://www.linkedin.com/in/hamzeh-shaghlil
 )
 
 
