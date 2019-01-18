@@ -258,7 +258,7 @@ sudo docker run -d -p 80:80 webserver-image:v1
 
 ## dokcerfile
 
-> simple dockerfile will download the latest version of nginx-alpine and copy the html file to the defult path of nginx 
+> simple dockerfile download the latest version of nginx-alpine and copy the html file to the default path of nginx 
 
 
 
