@@ -63,17 +63,13 @@ data "aws_availability_zones" "available" {}
 ```
 data "aws_ami" "latest-debian" {
 most_recent = true
-owners = ["379101102735"] # Canonical
+owners = ["379101102735"] 
 
   filter {
       name   = "name"
       values = ["debian-stretch-hvm-x86_64-gp2-2018-11-10-63975"]
   }
 
-  filter {
-      name   = "virtualization-type"
-      values = ["hvm"]
-  }
 }
 ```
 
